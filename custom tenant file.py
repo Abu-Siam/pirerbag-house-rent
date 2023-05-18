@@ -8,7 +8,7 @@ from docx import Document
 from deprecation import *
 import datetime
 import pandas
-import comtypes.client
+# import comtypes.client
 import time
 # english to bangla number translation
 
@@ -32,8 +32,8 @@ def EnglishToBangla(string_number : object) -> object:
 
 # GLOBAL VARIABLES!!!! MAY BE CHANGED FOR VARIOUS REASONS
 rent_increase = 0
-house_rent_list = {"5N": 10500, "4S": 9500, "4N": 11500, "3N": 6000, "3S": 10000, "2S": 11000, "1N": 7000, "5S": 10500,
-                   "6N": 5000, "2N": 10400, "1S": 8000, "6S": 10000}
+house_rent_list = {"5N": 10500, "4S": 10500, "4N": 11500, "3N": 6000, "3S": 10500, "2S": 11000, "1N": 7000, "5S": 10500,
+                   "6N": 6000, "2N": 11000, "1S": 8000, "6S": 10000}
 # prev_total_bill_list = {"6N": 0, "6S": 0, "5N": 0, "5S": 0, "4N": 0, "4S": 0, "3N": 0, "3S": 0, "2N": 0, "2S": 0,
 #                       "1N": 0, "1S": 0}
 # final_total_bill_list = {"6N": 0, "6S": 0, "5N": 0, "5S": 0, "4N": 0, "4S": 0, "3N": 0, "3S": 0, "2N": 0, "2S": 0,
@@ -60,6 +60,7 @@ loop_flag = 0
 
 
 while (1):
+    
     document = Document("empty.doc")
     header: object = document.add_heading("বিল")
     header.style = 'Title'
@@ -146,7 +147,7 @@ while (1):
     #print("estimate current bill  ", EnglishToBangla(estimated_current_bill))
     #print("gas bill ", EnglishToBangla(gas_bill))
     #print("water bill  ", EnglishToBangla(water_bill))
-    table.cell(6, 0).text = "checkmeter বিল"
+    table.cell(6, 0).text = "checkmeter & pump বিল"
     table.cell(6, 1).text = EnglishToBangla(checkmeter_bill)
 
     temp_date = (pandas.Period(datetime.datetime.now(), 'M') - 1 - month_var).strftime('%B %Y')
@@ -239,7 +240,7 @@ while (1):
     # SAVING IN DOC FILE
 
     temp = str(flatno).upper() + ".doc"
-    document.save("F:\CODE\pirerbag bill\doc\\" + temp)
+    document.save("D:\Code\pirerbag bill\pirerbag-house-rent\doc\\" + temp)
 
 #CONVERTING TO PDF
 

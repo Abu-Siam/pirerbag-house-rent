@@ -1,6 +1,6 @@
 import time
 #u need to import python-docx
-import comtypes.client
+#import comtypes.client
 
 from docx import Document
 
@@ -63,7 +63,7 @@ table2.cell(15, 0).text = "total (যোগফল) ="
 table2.cell(18, 0).text = "বাড়ীওয়ালার স্বাক্ষর"
 table2.cell(18, 1).text = ""
 
-document2.save("F:\CODE\pirerbag bill\doc\\total bill list.doc")
+document2.save("D:\Code\pirerbag bill\pirerbag-house-rent\doc\\total bill list.doc")
 
 """
 wdFormatPDF = 17
@@ -124,10 +124,10 @@ table3.cell(7, 0).text = "signature of owner"
 table3.cell(7, 1).text = ""
 
 
-document3.save("F:\CODE\pirerbag bill\doc\\bill A1 apartment.doc")
+document3.save("D:\Code\pirerbag bill\pirerbag-house-rent\doc\\bill A1 apartment.doc")
 wdFormatPDF = 17
-temp_doc_string = "F:\CODE\pirerbag bill\doc\\bill A1 apartment.doc"
-temp_pdf_string = "F:\CODE\pirerbag bill\doc\\bill A1 apartment.pdf"
+temp_doc_string = "D:\Code\pirerbag bill\pirerbag-house-rent\doc\\bill A1 apartment.doc"
+temp_pdf_string = "D:\Code\pirerbag bill\pirerbag-house-rent\doc\\bill A1 apartment.pdf"
 
 in_file = temp_doc_string
 out_file = temp_pdf_string
